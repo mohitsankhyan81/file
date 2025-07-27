@@ -8,9 +8,8 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <!-- <nav class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50"> -->
-    <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
+  <nav class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
+    
     <a href="index.html" class="text-2xl font-bold text-green-600">HyperFood</a>
     <div class="space-x-6">
       <a href="index.html" class="hover:text-green-600">Home</a>
@@ -29,71 +28,70 @@
     <a href="post.html" class="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded shadow hover:bg-green-700">Post Now</a>
   </section>
 
-  <section class="p-6">
-    <div class="mb-6 flex flex-wrap gap-4 justify-center">
-      <select class="p-2 rounded border" id="cityFilter">
-        <option disabled selected>Select City</option>
-        <option>Delhi</option>
-        <option>Mumbai</option>
-        <option>Bangalore</option>
-        <option>Chennai</option>
-      </select>
+<section class="p-6">
+  <div class="mb-6 flex flex-wrap gap-4 justify-center">
+    <select class="p-2 rounded border" id="cityFilter">
+      <option disabled selected>Select City</option>
+      <option>Delhi</option>
+      <option>Mumbai</option>
+      <option>Bangalore</option>
+      <option>Chennai</option>
+    </select>
 
-      <select class="p-2 rounded border" id="vegFilter">
-        <option disabled selected>Veg / Non-Veg</option>
-        <option value="veg">Veg</option>
-        <option value="nonveg">Non-Veg</option>
-      </select>
+    <select class="p-2 rounded border" id="vegFilter">
+      <option disabled selected>Veg / Non-Veg</option>
+      <option value="veg">Veg</option>
+      <option value="nonveg">Non-Veg</option>
+    </select>
 
-      <select class="p-2 rounded border" id="statusFilter">
-        <option disabled selected>Availability</option>
-        <option>Available</option>
-        <option>Claimed</option>
-      </select>
+    <select class="p-2 rounded border" id="statusFilter">
+      <option disabled selected>Availability</option>
+      <option>Available</option>
+      <option>Claimed</option>
+    </select>
+  </div>
+
+  <!-- ✅ Start grid container -->
+  <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="WhatsApp Image 2025-07-27 at 09.00.16_632d6c41.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
+      <h2 class="text-xl font-bold text-green-700">Paneer Curry</h2>
+      <p>City: Delhi</p>
+      <p>Type: Veg</p>
+      <p>Status: Available</p>
+      <p>Quantity: 3 Plates</p>
+      <p class="font-semibold">Price: ₹49</p>
+      <p class="text-sm">Posted by: Raj | 📞 9876543210</p>
+      <button class="bg-green-600 text-white px-4 py-1 mt-3 rounded hover:bg-green-700">Claim Now</button>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- <div class="bg-white rounded-xl shadow p-4"> -->
-        <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-        <img src="WhatsApp Image 2025-07-27 at 09.00.16_632d6c41.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
-        <h2 class="text-xl font-bold text-green-700">Paneer Curry</h2>
-        <p>City: Delhi</p>
-        <p>Type: Veg</p>
-        <p>Status: Available</p>
-        <p>Quantity: 3 Plates</p>
-        <p class="font-semibold">Price: ₹49</p>
-        <p class="text-sm">Posted by: Raj | 📞 9876543210</p>
-        <button class="bg-green-600 text-white px-4 py-1 mt-3 rounded hover:bg-green-700">Claim Now</button>
-      </div>
-
-      <!-- <div class="bg-white rounded-xl shadow p-4"> -->
-        <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-        <img src="WhatsApp Image 2025-07-27 at 08.57.07_03bf8bd1.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
-        <h2 class="text-xl font-bold text-green-700">Chicken Biryani</h2>
-        <p>City: Mumbai</p>
-        <p>Type: Non-Veg</p>
-        <p>Status: Available</p>
-        <p>Quantity: 2 Boxes</p>
-        <p class="font-semibold">Price: ₹60</p>
-        <p class="text-sm">Posted by: Ayesha | 📞 9123456789</p>
-        <button class="bg-green-600 text-white px-4 py-1 mt-3 rounded hover:bg-green-700">Claim Now</button>
-      </div>
-
-      <div class="bg-white rounded-xl shadow p-4">
-        <img src="WhatsApp Image 2025-07-27 at 09.01.57_55ff1ea4.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
-        <h2 class="text-xl font-bold text-green-700">Green Salad</h2>
-        <p>City: Bangalore</p>
-        <p>Type: Veg</p>
-        <p>Status: Claimed</p>
-        <p>Quantity: 1 Box</p>
-        <p class="font-semibold">Price: ₹49</p>
-        <p class="text-sm">Posted by: Neha | 📞 9988776655</p>
-        <button class="bg-gray-400 text-white px-4 py-1 mt-3 rounded cursor-not-allowed">Already Claimed</button>
-      </div>
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="WhatsApp Image 2025-07-27 at 08.57.07_03bf8bd1.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
+      <h2 class="text-xl font-bold text-green-700">Chicken Biryani</h2>
+      <p>City: Mumbai</p>
+      <p>Type: Non-Veg</p>
+      <p>Status: Available</p>
+      <p>Quantity: 2 Boxes</p>
+      <p class="font-semibold">Price: ₹60</p>
+      <p class="text-sm">Posted by: Ayesha | 📞 9123456789</p>
+      <button class="bg-green-600 text-white px-4 py-1 mt-3 rounded hover:bg-green-700">Claim Now</button>
     </div>
-  </section>
+
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="WhatsApp Image 2025-07-27 at 09.01.57_55ff1ea4.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
+      <h2 class="text-xl font-bold text-green-700">Green Salad</h2>
+      <p>City: Bangalore</p>
+      <p>Type: Veg</p>
+      <p>Status: Claimed</p>
+      <p>Quantity: 1 Box</p>
+      <p class="font-semibold">Price: ₹49</p>
+      <p class="text-sm">Posted by: Neha | 📞 9988776655</p>
+      <button class="bg-gray-400 text-white px-4 py-1 mt-3 rounded cursor-not-allowed">Already Claimed</button>
+    </div>
+
+  </div>
+</section>
 
   <footer class="mt-12 bg-gray-800 text-white p-6 text-center">
     <p class="mb-2">&copy; 2025 HyperFood Sharing App</p>
@@ -102,41 +100,6 @@
       <a href="contact.html" class="hover:underline">Contact Us</a>
     </div>
   </footer>
-  <script>
-  async function fetchPosts() {
-    try {
-      const data = await res.json();
-      const container = document.getElementById("foodList");
-      container.innerHTML = "";
-
-      data.forEach((post) => {
-        const card = document.createElement("div");
-        card.className = "bg-white rounded-xl shadow p-4";
-
-        const imgSrc = post.veg.toLowerCase() === "veg"
-          ? "https://source.unsplash.com/400x300/?vegetarian-food"
-          : "https://source.unsplash.com/400x300/?non-veg-food";
-
-        card.innerHTML = `
-          <img src="${imgSrc}" alt="Food" class="rounded w-full h-48 object-cover mb-3">
-          <h2 class="text-xl font-bold text-green-700">${post.title}</h2>
-          <p>City: ${post.city}</p>
-          <p>Type: ${post.veg}</p>
-          <p>Status: Available</p>
-          <p>Quantity: ${post.quantity}</p>
-          <p class="font-semibold">Price: ₹${post.price}</p>
-          <p class="text-sm">📞 ${post.contact}</p>
-          <button class="bg-green-600 text-white px-4 py-1 mt-3 rounded hover:bg-green-700">Claim Now</button>
-        `;
-
-        container.appendChild(card);
-      });
-    } catch (error) {
-      console.error("Failed to fetch posts:", error);
-    }
-  }
-  window.onload = fetchPosts;
-</script>
 
 </body>
 </html>
