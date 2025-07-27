@@ -8,7 +8,9 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <nav class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
+  <!-- <nav class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50"> -->
+    <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
     <a href="index.html" class="text-2xl font-bold text-green-600">HyperFood</a>
     <div class="space-x-6">
       <a href="index.html" class="hover:text-green-600">Home</a>
@@ -51,7 +53,9 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow p-4">
+      <!-- <div class="bg-white rounded-xl shadow p-4"> -->
+        <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
         <img src="WhatsApp Image 2025-07-27 at 09.00.16_632d6c41.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
         <h2 class="text-xl font-bold text-green-700">Paneer Curry</h2>
         <p>City: Delhi</p>
@@ -63,7 +67,9 @@
         <button class="bg-green-600 text-white px-4 py-1 mt-3 rounded hover:bg-green-700">Claim Now</button>
       </div>
 
-      <div class="bg-white rounded-xl shadow p-4">
+      <!-- <div class="bg-white rounded-xl shadow p-4"> -->
+        <div id="foodList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
         <img src="WhatsApp Image 2025-07-27 at 08.57.07_03bf8bd1.jpg" alt="Food" class="rounded w-full h-48 object-cover mb-3">
         <h2 class="text-xl font-bold text-green-700">Chicken Biryani</h2>
         <p>City: Mumbai</p>
@@ -96,6 +102,41 @@
       <a href="contact.html" class="hover:underline">Contact Us</a>
     </div>
   </footer>
+  <script>
+  async function fetchPosts() {
+    try {
+      const data = await res.json();
+      const container = document.getElementById("foodList");
+      container.innerHTML = "";
+
+      data.forEach((post) => {
+        const card = document.createElement("div");
+        card.className = "bg-white rounded-xl shadow p-4";
+
+        const imgSrc = post.veg.toLowerCase() === "veg"
+          ? "https://source.unsplash.com/400x300/?vegetarian-food"
+          : "https://source.unsplash.com/400x300/?non-veg-food";
+
+        card.innerHTML = `
+          <img src="${imgSrc}" alt="Food" class="rounded w-full h-48 object-cover mb-3">
+          <h2 class="text-xl font-bold text-green-700">${post.title}</h2>
+          <p>City: ${post.city}</p>
+          <p>Type: ${post.veg}</p>
+          <p>Status: Available</p>
+          <p>Quantity: ${post.quantity}</p>
+          <p class="font-semibold">Price: ₹${post.price}</p>
+          <p class="text-sm">📞 ${post.contact}</p>
+          <button class="bg-green-600 text-white px-4 py-1 mt-3 rounded hover:bg-green-700">Claim Now</button>
+        `;
+
+        container.appendChild(card);
+      });
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+    }
+  }
+  window.onload = fetchPosts;
+</script>
 
 </body>
 </html>
