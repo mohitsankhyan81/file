@@ -20,7 +20,8 @@ router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user || user.password !== password) {
-      return res.send("Invalid credentials");
+      return res.render("login.html", { error: "Invalid credentials" });
+      return res.send("Invalid credentials"); 
     }
     res.redirect("/index.html");
   } catch (err) {

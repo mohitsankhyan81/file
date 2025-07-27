@@ -40,10 +40,13 @@ const router = express.Router();
 const Post = require("../models/Post");
 
 router.post("/", async (req, res) => {
+  const { title, city, veg, quantity, contact, price, pickup } = req.body;
   try {
-    const { title, city, veg, quantity, contact, price, pickup, drop } = req.body;
-    if (!title || !city || !veg || !quantity || !contact || !price || !pickup) {
-      return res.status(400).send("All required fields must be filled");
+    if (!(title && city && veg && quantity && contact && drop) ) {
+      res.send(`${title}, ${city}, ${veg}, ${quantity}, ${contact} ${drop}, ${pickup}`);
+      console.log(`${title}, ${city}, ${veg}, ${quantity}, ${contact} last: , ${drop}, ${pickup}`);
+      // return res.status(400).send("All required fields must be filled");
+      return res.redirect("/index.html?error=1");
     }
 
     if (price < 49) {

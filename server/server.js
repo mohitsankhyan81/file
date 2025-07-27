@@ -6,7 +6,8 @@ const authRoutes = require("./routes/auth");
 const postRoutes = require("./routes/posts");
 const contactRoutes = require("./routes/contact");
 
-mongoose.connect("mongodb://localhost:27017/hyperfood", {
+// mongoose.connect("mongodb://localhost:27017/hyperfood", {
+mongoose.connect("mongodb+srv://gs8828256mongodb:Value2019@cluster0.kkk9h.mongodb.net/", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
